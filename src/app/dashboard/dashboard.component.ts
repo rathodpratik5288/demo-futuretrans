@@ -47,13 +47,14 @@ export class DashboardComponent implements OnInit {
   }
 
   loadLatLong() {
-    
-    if(localStorage.getItem('sunData') != undefined){
-      let result = JSON.parse(localStorage.getItem('sunData') || '');
-      this.lat = result.lat;
-      this.long = result.long;
-      this.date = result.date;
-      this.sunResult = result.result;
+    if (typeof localStorage !== 'undefined'){
+      if(localStorage.getItem('sunData') != undefined){
+        let result = JSON.parse(localStorage.getItem('sunData') || '');
+        this.lat = result.lat;
+        this.long = result.long;
+        this.date = result.date;
+        this.sunResult = result.result;
+      }
     }
   }
 

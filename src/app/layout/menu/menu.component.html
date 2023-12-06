@@ -19,12 +19,7 @@
 
                 <ul class="navbar-nav d-flex">
                     <li class="nav-item">
-                        <!-- <input class="form-control me-2" style="margin-top: 5px;" type="search" placeholder="Search" aria-label="Search"> -->
-                        <datalist id="Search" class="form-control">
-                            <option value="Cat Fact">
-                            <option value="Sunset time">
-                          </datalist>
-                        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                        <input class="form-control me-2" style="margin-top: 5px;" type="search" placeholder="Search" [value]="defaultSearchValue" aria-label="Search">
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

@@ -14,13 +14,14 @@ export class MenuComponent implements OnInit {
 
   currentUser: user;
   notificationList: notification[];
-
+  defaultSearchValue: string;
   constructor(private router: Router){
     this.currentUser = {
       id: 1,
       name: '',
       imagePath: "./assets/images/user1.png"
     };
+    this.defaultSearchValue = 'Cat';
   }
 
   ngOnInit(): void {
