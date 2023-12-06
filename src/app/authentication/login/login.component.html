@@ -1,0 +1,30 @@
+<div class="col-xs-4">
+    <div>
+        <h2>Angular Demo Application</h2>
+        <div class="clearfix"></div>
+        <br />
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-md-10 mx-auto col-lg-6">
+                    <div class="text-danger text-center col-12 mb-3" *ngIf="!isValid"  >
+                        <label>Pleaes enter username</label>
+                    </div>
+                    <div class="p-4 p-md-5 border rounded-3 bg-light">
+                        <div class="form-floating mb-3">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" [(ngModel)]="username" >
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" (click)="ngOK()" type="button">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+    </div>
+</div>
+
+<div class="clearfix"></div>

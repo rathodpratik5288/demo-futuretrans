@@ -1,0 +1,38 @@
+<div>
+  <div class="card">
+    <h5 class="card-header">Cat Fact Information:</h5>
+    <div class="card-body">
+      <p class="card-text">{{factResult}}</p>
+      <button class="btn btn-primary" (click)="ngRefreshCatFact()" type="button">Refresh</button>
+    </div>
+  </div>
+</div>
+<div class="clearfix mb-3">
+</div>
+<div>
+  <div class="card">
+    <h5 class="card-header">Sunset information:</h5>
+    <div class="card-body">
+      <div>
+        <div class="text-danger text-center col-12 mb-3" *ngIf="!isValid"  >
+          <label>{{errorMessage}}</label>
+      </div>
+        <div class="mb-3">
+          <label class="form-label">Latitude</label>
+          <input type="text" class="form-control" [(ngModel)]="lat" (blur)='saveLocalLatLongData(this.factResult)' >
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Longitude</label>
+          <input type="text" class="form-control" [(ngModel)]="long" (blur)='saveLocalLatLongData(this.factResult)' >
+        </div>
+        <div class="mb-3 ">
+          <label class="form-label">Date</label>
+          <input type="date" class="form-control" [(ngModel)]="date"  (blur)='saveLocalLatLongData(this.factResult)'>
+        </div>
+        <button type="button" (click)="getSunInformation()" class="btn btn-primary">Get Sunrise & Sunset information</button>
+      </div>
+      <br>
+      <p class="card-text">{{sunResult}}</p>
+    </div>
+  </div>
+</div>

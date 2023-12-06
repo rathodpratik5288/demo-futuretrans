@@ -1,0 +1,59 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- <a routerLink="/home/dashboard" >Angular Demo</a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active"  routerLink="/home/dashboard" aria-current="page" >Dashboard</a>
+                    </li>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link" routerLink="/home/contacts" >Contacts</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item">
+                        <!-- <input class="form-control me-2" style="margin-top: 5px;" type="search" placeholder="Search" aria-label="Search"> -->
+                        <datalist id="Search" class="form-control">
+                            <option value="Cat Fact">
+                            <option value="Sunset time">
+                          </datalist>
+                        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="avatar avatar-user" [src]="currentUser.imagePath" width="30" height="30" alt="User">
+                            <label>{{currentUser.name}}</label>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" (click)="logout()">LogOut</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle notification-ui_icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="unread-notification">Notification</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <div class="notification-ui_dd-header">
+                                    <h3 class="text-center">Notification</h3>
+                                </div>
+                            </li>
+                            <li *ngFor="let notification of notificationList" >
+                                <span>{{notification.message}}</span> 
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
